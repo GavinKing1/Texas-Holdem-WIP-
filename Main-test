@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Here is the unshuffled deck:\n"+Deck.FULL_DECK+"\n");
+    ArrayList<String> shuffleTest = new ArrayList<>();
+    shuffleTest = Deck.FULL_DECK;
+    System.out.println("Here is the shuffled deck:\n"+Deck.shuffle(shuffleTest)+"\n");
+    ArrayList<String> test = new ArrayList<>(
+      Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"));
+    System.out.println("Here is a simple test ArrayList with numbers 1-10 in order, but shuffled:\n"+Deck.shuffle(test)+"\n");
+    System.out.println("Now, let's deal a hand of 5!\nHere's the shuffled deck before the hand is dealt:");
+    ArrayList<String> testDeck = new ArrayList<>();
+    testDeck = Deck.FULL_DECK;
+    testDeck = Deck.shuffle(testDeck);
+    System.out.println(testDeck);
+    System.out.println("Now, let's see the hand that gets dealt:");
+    ArrayList<String> testHand = new ArrayList<>();
+    Deck.deal(testHand, testDeck, 5);
+    System.out.println(testHand);
+    System.out.println("Let's see what that deck looks like now:");
+    System.out.println(testDeck);
+  } // method end
+} // Class end
