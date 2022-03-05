@@ -47,9 +47,11 @@ public class Evaluate {
     if (suit1.equals(suit2) && suit2.equals(suit3) && suit3.equals(suit4) && suit4.equals(suit5))
       flush = true;
 
+    // royal flush
     if (aces == 1 && kings == 1 && queens == 1 && jacks == 1 && tens == 1 && flush)
       return 10.00;
     
+    // straight flush
     if (flush) {
       if (kings == 1 && queens == 1 && jacks == 1 && tens == 1 && nines == 1)
         return 9.13;
@@ -71,6 +73,7 @@ public class Evaluate {
         return 9.05;
     } // if end
 
+    // four of a kind
     if (aces == 4) {
       if (kings == 1)
         return 8.1413;
@@ -410,6 +413,7 @@ public class Evaluate {
         return 8.0209;
     } // if end
     
+    // full house
     if (aces == 3) {
       if (kings == 2)
         return 7.1413;
@@ -749,6 +753,7 @@ public class Evaluate {
         return 7.0209;
     } // if end
 
+    // flush
     if (flush) {
       if (aces >= 1) {
         if (kings >= 1)
@@ -934,6 +939,7 @@ public class Evaluate {
         return 6.0200;
     } // if end
 
+    // straight
     if (aces == 1 && kings == 1 && queens == 1 && jacks == 1 && tens == 1)
       return 5.14;
     if (kings == 1 && queens == 1 && jacks == 1 && tens == 1 && nines == 1)
@@ -955,6 +961,7 @@ public class Evaluate {
     if (fives == 1 && fours == 1 && threes == 1 && twos == 1 && aces == 1)
       return 5.05;
 
+    // three of a kind
     if (aces == 3) {
       if (kings >= 1) {
         if (queens >= 1)
@@ -2971,6 +2978,7 @@ public class Evaluate {
           return 4.020403;
     } // if end
     
+    // two pair
     if (aces == 2) {
       if (kings == 2) {
         if (queens == 1)
@@ -4868,6 +4876,7 @@ public class Evaluate {
         } // if end
     } // if end
 
+    // pair
     if (aces == 2) {
       if (kings >= 1) {
         if (queens >= 1)
@@ -6884,6 +6893,7 @@ public class Evaluate {
           return 2.020403;
     } // if end    
 
+    // high card
     double ret = 1.0;
     int number1, number2;
     switch(num1) {

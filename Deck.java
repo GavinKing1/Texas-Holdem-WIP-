@@ -57,11 +57,13 @@ public class Deck {
   public static final String sK = "King♤";
   public static final String sA = "Ace♤";
 
-  public static final ArrayList<String> FULL_DECK = new ArrayList<> (
+  // full deck of cards
+  public static final ArrayList<String> FULL_DECK = new ArrayList<> ( 
     Arrays.asList(c2, c3, c4, c5, c6, c7, c8, c9, c10, cJ, cQ, cK, cA, d2, d3, d4, d5, d6, d7, d8, d9, d10, dJ, dQ, dK, dA, h2, h3, h4, h5, h6, h7, h8, h9, h10, hJ, hQ, hK, hA, s2, s3, s4, s5, s6, s7, s8, s9, s10, sJ, sQ, sK, sA)
   ); // ArrayList end
 
-  public static ArrayList<String> shuffle(ArrayList<String> deck) {
+  // shuffles inputted list
+  public static ArrayList<String> shuffle(ArrayList<String> deck) { 
     ArrayList<String> ret = new ArrayList<>();
     for (int j = 0; j < deck.size(); j++) {
       int rand = (int)(Math.random() * ret.size());
@@ -70,7 +72,8 @@ public class Deck {
     return ret;
   } // method end
 
-  public static void deal(ArrayList<String> hand, ArrayList<String> deck, int x) {
+  // deals a hand of x cards from deck
+  public static void deal(ArrayList<String> hand, ArrayList<String> deck, int x) { 
     int pos = x-1;
     while (pos >= 0) {
       hand.add(deck.get(pos));
@@ -78,4 +81,5 @@ public class Deck {
       pos--;
     } // while end
   } // method end
+
 } // Class end
